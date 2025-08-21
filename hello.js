@@ -1,6 +1,6 @@
 function helloWorld(){
     console.log("Hello World");
-    console.log("preety preety lady");
+    console.log("pretty pretty lady");
 }
 
 helloWorld();
