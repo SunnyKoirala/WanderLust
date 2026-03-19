@@ -122,6 +122,7 @@ app.delete("/listing/:id", wrapAsync(async (req, res) => {
     res.redirect("/listing");
 }));
 
+
 //Post Review Route
 app.post("/listing/:id/reviews",validateReviews,wrapAsync(async(req,res)=>{
     let{id}=req.params;
@@ -133,6 +134,7 @@ app.post("/listing/:id/reviews",validateReviews,wrapAsync(async(req,res)=>{
     res.redirect(`/listing/${list._id}`);
     // console.log("Sucess");
 }));
+
 
 //Delete Review Route
 app.delete("/listing/:id/reviews/:reviewId",wrapAsync(async(req,res)=>{
@@ -149,6 +151,7 @@ app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
 });
 
+
 //error  handling middleware
 app.use((err, req, res, next) => {
     let { status = 500, message = "Error Occured" } = err;
@@ -158,3 +161,4 @@ app.use((err, req, res, next) => {
 app.listen(8080, (req, res) => {
     console.log("Server is working on the port no 8080");
 }); 
+
